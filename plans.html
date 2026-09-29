@@ -94,7 +94,7 @@ ul.check .mid{color:var(--warn);font-weight:700}
   <figure><figcaption><strong>First floor</strong><small>460 sq ft enclosed</small></figcaption><svg id="p-first"></svg>
     <p>A gallery looks down into the living room over a glass rail. Bedroom 2 and Bath 2 sit directly above Bedroom 1 and Bath 1.</p></figure>
   <figure><figcaption><strong>Terrace</strong><small>70 sq ft stair room</small></figcaption><svg id="p-terrace"></svg>
-    <p>Flat roof with a front concrete frame, a pergola deck, solar panels on the study roof, and the water tank on the stair room.</p></figure>
+    <p>Flat roof with a front concrete frame, a pergola deck, solar panels on the study roof, and the water tank in the south-west corner.</p></figure>
 </div>
 <div class="legend">
   <span><i style="background:var(--room)"></i>Enclosed room</span>
@@ -111,14 +111,19 @@ ul.check .mid{color:var(--warn);font-weight:700}
   </section>
   <section>
     <h2>Vastu check for a south-facing plot</h2>
+    <p style="margin:-4px 0 12px;color:var(--muted);font-size:14px">7 of 11 rules met, 4 partly. The only one fully missed is the south-west master bedroom, which is the trade-off for the double-height living room.</p>
     <ul class="check">
       <li><span class="ok">✓</span><span><b>Main door</b> on the south wall, east of centre (pada 3–4). The south-west half is avoided.</span></li>
-      <li><span class="ok">✓</span><span><b>Kitchen</b> in the north-west. Cook facing east along the east counter.</span></li>
+      <li><span class="ok">✓</span><span><b>Kitchen</b> in the north-west, with the hob on the east counter so you cook facing east.</span></li>
       <li><span class="ok">✓</span><span><b>Staircase</b> on the west side. It climbs clockwise: west, turn north, then east.</span></li>
-      <li><span class="ok">✓</span><span><b>Water tank</b> over the stair room, in the heavier south-west half.</span></li>
-      <li><span class="ok">✓</span><span><b>Brahmasthan</b> (centre) stays open, with the passage and the double-height space.</span></li>
-      <li><span class="mid">~</span><span><b>Both bedrooms</b> are in the north-east, stacked. The double-height living takes the south-west, where vastu would put the master bedroom. This is the trade-off for the tall living room. Keep beds with the head to the south.</span></li>
-      <li><span class="mid">~</span><span><b>Pooja</b> is a wall unit on the gallery's east wall rather than a separate room.</span></li>
+      <li><span class="ok">✓</span><span><b>Overhead water tank</b> on a plinth in the south-west corner of the roof.</span></li>
+      <li><span class="ok">✓</span><span><b>Underground sump</b> in the north-east corner. <b>Septic tank</b> in the north-west.</span></li>
+      <li><span class="ok">✓</span><span><b>Beds</b> in both bedrooms placed with the head to the east.</span></li>
+      <li><span class="ok">✓</span><span><b>Brahmasthan</b> (centre) left open, with the passage and the double-height space.</span></li>
+      <li><span class="mid">~</span><span><b>Both bedrooms</b> are in the north-east, stacked. The double-height living room takes the south-west, where vastu would put the master bedroom. This is the trade-off for the tall living room.</span></li>
+      <li><span class="mid">~</span><span><b>Baths</b> are east-centre, stacked. It's acceptable, but not the west or north-west that vastu prefers.</span></li>
+      <li><span class="mid">~</span><span><b>Pooja</b> is a wall unit on the gallery's east wall, not a room in the north-east.</span></li>
+      <li><span class="mid">~</span><span><b>South glass wall.</b> Vastu prefers fewer openings on the south. The concrete frame and wood fins reduce the heat.</span></li>
     </ul>
   </section>
 </div>
@@ -161,7 +166,7 @@ const PLANS = {
       {w:"h",x:15,y:27,len:2.5,al:1,in:-1},
       {w:"h",x:1,y:38,len:2.5,al:1,in:-1}
     ],
-    extra: [{t:"MAIN DOOR",x:16.25,y:4.5}]
+    extra: [{t:"MAIN DOOR",x:16.25,y:4.5},{t:"HOB · FACE EAST",x:5,y:29.5},{t:"BED HEAD → EAST",x:15,y:30.2},{t:"SEPTIC (NW)",x:3,y:38.6},{t:"SUMP (NE)",x:17,y:38.6}]
   },
   first: {
     stairLabel: "UP",
@@ -184,7 +189,7 @@ const PLANS = {
       {w:"h",x:15,y:27,len:2.5,al:1,in:-1},
       {w:"v",x:10,y:24.3,len:2.5,al:1,in:-1}
     ],
-    extra: [{t:"GLASS RAIL",x:15,y:13.6},{t:"WOOD-CLAD PANEL",x:16,y:6.8}]
+    extra: [{t:"GLASS RAIL",x:15,y:13.6},{t:"WOOD-CLAD PANEL",x:16,y:6.8},{t:"BED HEAD → EAST",x:15,y:30.2}]
   },
   terrace: {
     stairLabel: "",
@@ -198,7 +203,7 @@ const PLANS = {
     ],
     openings: [], windows: [],
     doors: [{w:"v",x:10,y:20.7,len:3,al:1,in:1}],
-    extra: [{t:"WATER TANK ABOVE",x:5,y:25.2},{t:"CONCRETE FRAME",x:10,y:3.6}]
+    extra: [{t:"WATER TANK (SW)",x:4,y:7.2},{t:"CONCRETE FRAME",x:10,y:3.6}]
   }
 };
 

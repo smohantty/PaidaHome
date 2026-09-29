@@ -445,18 +445,20 @@ F(0, 5.95, 9.45, 6.05, 9.55, 12.2, 19.5, 'black', 'pendant rod')
 cylinder(1.6, 0.25, P(6, 9.5, 12.1), M['lamp'], 48, 'pendant')
 cylinder(0.5, 1.4, P(18.9, 7.1, 0.7), M['black'], 24, 'planter')
 blob(1.3, P(18.9, 7.1, 3.6), M['leaf'], 1.7, 'plant')
-F(0, 0.25, 27, 2.25, 37.75, 0, 3, 'white', 'counter'); F(0, 2.25, 35.75, 9.75, 37.75, 0, 3, 'white', 'counter')
-F(0, 0.25, 27, 2.25, 37.75, 3, 3.1, 'stone', 'counter top'); F(0, 2.25, 35.75, 9.75, 37.75, 3, 3.1, 'stone', 'counter top')
+F(0, 0.25, 27, 2.25, 37.75, 0, 7, 'white', 'tall storage'); F(0, 2.25, 35.75, 7.75, 37.75, 0, 3, 'white', 'counter')
+F(0, 2.25, 35.75, 7.75, 37.75, 3, 3.1, 'stone', 'counter top')
+F(0, 7.75, 28, 9.75, 37.75, 0, 3, 'white', 'counter'); F(0, 7.75, 28, 9.75, 37.75, 3, 3.1, 'stone', 'counter top')
+F(0, 8.1, 30.5, 9.4, 33.5, 3.1, 3.16, 'black', 'hob')  # cook faces east
 F(0, 0.3, 24.3, 2.6, 26.6, 0, 6, 'metal', 'fridge')
-F(0, 13, 31, 18, 37.5, 0, 1.8, 'linen', 'bed'); F(0, 13, 37.4, 18, 37.75, 0, 3.6, 'woodDark', 'headboard')
-F(0, 10.3, 29, 12.3, 35.5, 0, 7, 'woodDark', 'wardrobe')
+F(0, 13.25, 31, 19.75, 36, 0, 1.8, 'linen', 'bed'); F(0, 19.4, 31, 19.75, 36, 0, 3.6, 'woodDark', 'headboard')  # head east
+F(0, 17.7, 27.25, 19.75, 29.25, 0, 7, 'woodDark', 'wardrobe')
 F(0, 18.5, 24.5, 19.75, 26.2, 0, 1.4, 'white', 'wc'); F(0, 18.2, 17.3, 19.75, 20.5, 0, 2.8, 'white', 'vanity')
 # first floor furniture
 F(1, 17.5, 14, 19.75, 19, 0.3, 1.5, 'fabric', 'sofa'); F(1, 19.1, 14, 19.75, 19, 1.5, 2.9, 'fabric', 'sofa back')
 F(1, 13.5, 15, 15.8, 17.8, 0, 1.3, 'woodDark', 'table')
 F(1, 19.2, 19.4, 19.75, 20.9, 0, 4, 'woodDark', 'pooja unit')
-F(1, 13, 31, 18, 37.5, 0, 1.8, 'linen', 'bed'); F(1, 13, 37.4, 18, 37.75, 0, 3.6, 'clad', 'headboard')
-F(1, 10.3, 29, 12.3, 35.5, 0, 7, 'woodDark', 'wardrobe')
+F(1, 13.25, 31, 19.75, 36, 0, 1.8, 'linen', 'bed'); F(1, 19.4, 31, 19.75, 36, 0, 3.6, 'clad', 'headboard')  # head east
+F(1, 17.7, 27.25, 19.75, 29.25, 0, 7, 'woodDark', 'wardrobe')
 F(1, 18.5, 24.5, 19.75, 26.2, 0, 1.4, 'white', 'wc')
 F(1, 0.3, 30, 2.5, 35, 0, 2.5, 'woodDark', 'desk'); F(1, 6, 34, 9.7, 37.7, 0, 1.5, 'fabric', 'daybed')
 F(1, 0.25, 24.5, 1.1, 29, 0, 7, 'woodDark', 'bookshelf')
@@ -472,7 +474,10 @@ F(2, 15, 34, 19.5, 37.5, 0, 1.6, 'woodDark', 'planter box')
 blob(1.6, P(17.2, 35.7, 2 * FLOOR + 2.6), M['leaf'], 0.8, 'terrace plants')
 for cy in (27.5, 31.8, 36.1):
     cbox(8.4, 3.3, 0.15, P(5, cy, 2 * FLOOR + 1.3), M['solar'], (math.radians(13), 0, 0), 'solar panel')
-cylinder(1.7, 4, P(4, 20.5, 2 * FLOOR + 8.5 + 2), M['tank'], 40, 'water tank')
+cylinder(1.7, 4, P(3.5, 9.5, 2 * FLOOR + 1.5 + 2), M['tank'], 40, 'water tank')  # south-west corner of the roof
+box(1, 7, 6, 12, 2 * FLOOR, 2 * FLOOR + 1.5, M['frame'], 'tank plinth')
+box(0.6, 38.3, 4, 39.7, 0, 0.06, M['frame'], 'septic cover (NW)')
+box(16, 38.3, 19.4, 39.7, 0, 0.06, M['frame'], 'sump cover (NE)')
 
 # site
 bpy.ops.mesh.primitive_plane_add(size=160, location=(0, 0, -0.55 * FT))
