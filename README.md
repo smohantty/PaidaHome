@@ -32,11 +32,13 @@ The HTML pages open directly in a browser; there's no build step. The 3D model l
 
 | Floor | Spaces |
 |---|---|
-| Ground | Bedroom 1 (SW) + attached bath (W), foyer with main door in pada 4, kitchen (SE), dining (centre), stair (W), double-height living (NE) with north glass wall, pooja room (NE corner), store + powder room (NW) |
-| First | Master Bedroom 2 (SW) + attached bath, lounge over the kitchen, gallery and walkway over the living room, study (NW) |
+| Ground | Kitchen (SE) with breakfast counter, dining (SW) with pantry wall, foyer with main door in pada 4, open lounge (centre), stair (W), double-height living (NE) with north glass wall, pooja room (NE corner), store + powder room with shower (NW) |
+| First | Master Bedroom 1 (SW) + attached bath, Bedroom 2 (NW) + attached bath, lounge over the kitchen, gallery and walkway over the living room |
 | Terrace | Stair room (W), water tank (SW), solar panels, pergola deck, open north-east |
 
-- Vastu: 12 of 13 checks met. The 13th, more open space on the north than the south, depends on setback bylaws.
+Vacation home: everyone sleeps upstairs, and the ground floor is for daytime use and guests.
+
+- Vastu: 12 of 14 checks met and 2 partly met (the ground-floor south-west is dining rather than a bedroom, and the setbacks come from bylaws).
 - Living room ceiling: about 19′6″ (double height)
 - Enclosed floor area: about 1,240 sq ft (the void isn't counted)
 - Floor-to-floor height: 10′

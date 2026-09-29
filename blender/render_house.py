@@ -36,23 +36,23 @@ LEVELS = [
     dict(name='Ground floor', wallH=9.5,
          rooms=[('Front setback', (0, 0, 20, 3), 'paving'), ('Front garden', (0, 3, 9, 3), 'paving'),
                 ('Porch', (9, 3, 5, 3), 'stone'), ('Planter', (14, 3, 6, 3), 'paving'),
-                ('Bedroom 1', (0, 6, 10, 9), 'wood'), ('Bath 1', (0, 15, 6, 4), 'bath'), ('Dress 1', (6, 15, 4, 4), 'wood'),
+                ('Dining', (0, 6, 10, 9), 'wood'), ('Pantry', (0, 15, 10, 4), 'tile'),
                 ('Foyer', (10, 6, 3.5, 11), 'stone'), ('Kitchen', (13.5, 6, 6.5, 11), 'tile'),
-                ('Stair', (0, 19, 10, 7), 'stone'), ('Dining', (10, 17, 10, 9), 'wood'),
+                ('Stair', (0, 19, 10, 7), 'stone'), ('Lounge', (10, 17, 10, 9), 'wood'),
                 ('Store', (0, 26, 5, 7), 'tile'), ('Powder', (0, 33, 5, 5), 'bath'),
                 ('Living', (5, 26, 15, 12), 'wood'), ('Pooja', (16, 34, 4, 4), 'stone'),
                 ('Rear setback', (0, 38, 20, 2), 'paving')],
-         encl=((0,6,10,9),(0,15,6,4),(6,15,4,4),(10,6,3.5,11),(13.5,6,6.5,11),(0,19,10,7),(10,17,10,9),(0,26,5,7),(0,33,5,5),(5,26,15,12),(16,34,4,4)), extraWalls=[],
-         open=((10,17,13.5,17),(10,19,10,22.5),(11,26,19,26),(14.5,17,17,17),(6.5,15,9.5,15),(16,34.5,16,37.5)), doors=((10.3,6,13.3,6),(10,11.5,10,14.5),(1,15,3.5,15),(5,27,5,29.5),(5,34,5,36.5)), glassdoors=[],
-         windows=((6,6,9.5,6,3,7),(16.5,6,19.5,6,3.5,7),(1.5,38,3.5,38,5.5,7),(5.5,38,16,38,0,9.5)), clad=[], rails=[],
+         encl=((0,6,10,9),(0,15,10,4),(10,6,3.5,11),(13.5,6,6.5,11),(0,19,10,7),(10,17,10,9),(0,26,5,7),(0,33,5,5),(5,26,15,12),(16,34,4,4)), extraWalls=[],
+         open=((10,17,13.5,17),(10,19,10,22.5),(11,26,19,26),(10,7.5,10,14),(13.5,10,13.5,15),(6,15,9,15),(16,34.5,16,37.5)), doors=((10.3,6,13.3,6),(5,27,5,29.5),(5,34,5,36.5)), glassdoors=[],
+         windows=((2,6,8,6,3,7),(16.5,6,19.5,6,3.5,7),(1.5,38,3.5,38,5.5,7),(5.5,38,16,38,0,9.5)), clad=[], rails=[],
          parapets=((0,0,8,0,4),(16,0,20,0,4),(0,0,0,6,4),(20,0,20,6,4),(0,40,20,40,5),(0,38,0,40,5),(20,38,20,40,5))),
     dict(name='First floor', wallH=9.5,
-         rooms=[('Bedroom 2', (0, 6, 10, 9), 'wood'), ('Bath 2', (0, 15, 6, 4), 'bath'), ('Dress 2', (6, 15, 4, 4), 'wood'),
+         rooms=[('Bedroom 1', (0, 6, 10, 9), 'wood'), ('Bath 1', (0, 15, 6, 4), 'bath'), ('Dress', (6, 15, 4, 4), 'wood'),
                 ('Lounge', (10, 6, 10, 11), 'wood'), ('Gallery', (10, 17, 10, 9), 'wood'), ('Walkway', (10, 26, 3, 3), 'wood'),
-                ('Study', (0, 26, 10, 12), 'wood')],
-         encl=((0,6,10,9),(0,15,6,4),(6,15,4,4),(10,6,10,11),(0,19,10,7),(0,26,10,12)), extraWalls=((20,17,20,38),(10,38,20,38)),
-         open=((10,22.5,10,26),(10.5,17,19.5,17),(6.5,15,9.5,15)), doors=((10,11.5,10,14.5),(1,15,3.5,15),(10,26.3,10,28.8)), glassdoors=[],
-         windows=((6,6,9.5,6,3,7),(12,6,18,6,2,7),(2,38,8,38,3,7),(10,38,20,38,0,9.5)), clad=((10,6,12,6),(18,6,20,6)), rails=((13,26,20,26),(13,26,13,29),(10,29,13,29)),
+                ('Bedroom 2', (0, 26, 10, 12), 'wood'), ('Bath 2', (0, 33, 5, 5), 'bath')],
+         encl=((0,6,10,9),(0,15,6,4),(6,15,4,4),(10,6,10,11),(0,19,10,7),(0,26,10,12),(0,33,5,5)), extraWalls=((20,17,20,38),(10,38,20,38)),
+         open=((10,22.5,10,26),(10.5,17,19.5,17),(6.5,15,9.5,15)), doors=((10,11.5,10,14.5),(1,15,3.5,15),(10,26.3,10,28.8),(5,34,5,36.5)), glassdoors=[],
+         windows=((6,6,9.5,6,3,7),(12,6,18,6,2,7),(5.5,38,9.5,38,3,7),(1.5,38,3.5,38,5.5,7),(10,38,20,38,0,9.5)), clad=((10,6,12,6),(18,6,20,6)), rails=((13,26,20,26),(13,26,13,29),(10,29,13,29)),
          parapets=[]),
     dict(name='Terrace', wallH=8,
          rooms=[('Roof terrace', (0, 3, 20, 16), 'terrace'), ('Pergola deck', (10, 19, 10, 7), 'deck'),
@@ -423,22 +423,22 @@ def F(lvl, x1, y1, x2, y2, h1, h2, mat, name='furniture'):
     return box(x1, y1, x2, y2, lvl * FLOOR + h1, lvl * FLOOR + h2, M[mat], name)
 
 
-# south-west bedrooms on both floors: bed head to the south, wardrobe in the dress area, bath fixtures
-for L in (0, 1):
-    F(L, 0.5, 6.3, 5.5, 12.8, 0, 1.8, 'linen', 'bed'); F(L, 0.5, 6.3, 5.5, 6.65, 0, 3.6, 'clad' if L else 'woodDark', 'headboard')
-    F(L, 6.25, 17.1, 9.75, 18.75, 0, 7, 'woodDark', 'wardrobe')
-    F(L, 4.5, 15.3, 5.75, 16.8, 0, 1.4, 'white', 'wc'); F(L, 0.25, 17.5, 1.5, 18.75, 0, 2.8, 'white', 'vanity')
-F(0, 10.25, 7.5, 11, 10.5, 0, 3.5, 'woodDark', 'shoe cabinet')
-# kitchen (south-east): fridge SW, hob on the east wall, sink counter NE
+# ground: dining (south-west) + pantry wall
+F(0, 2.5, 9, 7.5, 12, 2.35, 2.5, 'woodDark', 'dining top'); F(0, 4.7, 10.2, 5.3, 10.8, 0, 2.35, 'black', 'dining base')
+for cx, cy in [(3.3, 8.3), (5, 8.3), (6.7, 8.3), (3.3, 12.7), (5, 12.7), (6.7, 12.7)]:
+    F(0, cx - 0.5, cy - 0.5, cx + 0.5, cy + 0.5, 1.4, 1.55, 'woodDark', 'chair seat')
+    F(0, cx - 0.05, cy - 0.05, cx + 0.05, cy + 0.05, 0, 1.4, 'black', 'chair leg')
+F(0, 0.25, 17.1, 5.75, 18.75, 0, 7, 'woodDark', 'crockery wall'); F(0, 9.25, 15.5, 9.75, 18.75, 0, 7, 'woodDark', 'pantry unit')
+F(0, 12.75, 6.5, 13.25, 9, 0, 3.5, 'woodDark', 'shoe cabinet')
+# kitchen (south-east): fridge SW, hob on the east wall, sink counter NE, breakfast counter to the foyer
 F(0, 13.75, 6.25, 16, 8.5, 0, 6, 'metal', 'fridge')
 F(0, 18, 6.25, 19.75, 14.5, 0, 3, 'white', 'hob counter'); F(0, 18, 6.25, 19.75, 14.5, 3, 3.1, 'stone', 'counter top')
 F(0, 18.3, 8.5, 19.5, 11, 3.1, 3.16, 'black', 'hob'); F(0, 18.4, 8.7, 19.75, 10.8, 6.2, 7.2, 'metal', 'chimney hood')
 F(0, 16.5, 14.75, 19.75, 16.75, 0, 3, 'white', 'sink counter'); F(0, 16.5, 14.75, 19.75, 16.75, 3, 3.1, 'stone', 'counter top')
-# dining
-F(0, 13, 20, 17, 23, 2.35, 2.5, 'woodDark', 'dining top'); F(0, 14.7, 21.2, 15.3, 21.8, 0, 2.35, 'black', 'dining base')
-for cx, cy in [(13.8, 19.3), (16.2, 19.3), (13.8, 23.7), (16.2, 23.7), (12.3, 21.5), (17.7, 21.5)]:
-    F(0, cx - 0.55, cy - 0.55, cx + 0.55, cy + 0.55, 1.4, 1.55, 'woodDark', 'chair seat')
-    F(0, cx - 0.05, cy - 0.05, cx + 0.05, cy + 0.05, 0, 1.4, 'black', 'chair leg')
+F(0, 13.75, 10, 14.75, 15, 0, 3.3, 'white', 'breakfast counter'); F(0, 13.6, 10, 15, 15, 3.3, 3.45, 'woodDark', 'breakfast top')
+# lounge (open centre)
+F(0, 17.2, 18, 19.75, 25, 0.3, 1.5, 'fabric', 'sofa'); F(0, 19.05, 18, 19.75, 25, 1.5, 2.9, 'fabric', 'sofa back')
+F(0, 13.5, 20, 15.8, 23, 0, 1.3, 'woodDark', 'coffee table'); F(0, 12.5, 19, 17, 24, 0, 0.03, 'linen', 'rug')
 # living (north-east, double height)
 F(0, 5.3, 28, 7.8, 35, 0.3, 1.5, 'fabric', 'sofa'); F(0, 5.3, 28, 6, 35, 1.5, 2.9, 'fabric', 'sofa back')
 F(0, 5.4, 28.1, 7.7, 34.9, 0, 0.3, 'black', 'sofa base')
@@ -451,16 +451,22 @@ blob(1.3, P(14, 36.8, 3.6), M['leaf'], 1.7, 'plant')
 box(16, 34, 20, 38, 9.5, 10, M['slab'], 'pooja ceiling')
 F(0, 19.2, 35, 19.75, 37, 0, 4, 'woodDark', 'pooja shelf')
 box(5, 39.55, 19, 39.75, 0.5, 5, M['leaf'], 'green wall')
-# store + powder
+# store + powder (with shower)
 F(0, 0.25, 26.5, 1.5, 32.5, 0, 7, 'woodDark', 'store shelves')
 F(0, 0.3, 36, 1.8, 37.6, 0, 1.4, 'white', 'wc'); F(0, 0.25, 33.5, 1.5, 35, 0, 2.8, 'white', 'vanity')
-# first floor: lounge, gallery, study
+# first floor: master bedroom (south-west), bed head south
+F(1, 0.5, 6.3, 5.5, 12.8, 0, 1.8, 'linen', 'bed'); F(1, 0.5, 6.3, 5.5, 6.65, 0, 3.6, 'clad', 'headboard')
+F(1, 6.25, 17.1, 9.75, 18.75, 0, 7, 'woodDark', 'wardrobe')
+F(1, 4.5, 15.3, 5.75, 16.8, 0, 1.4, 'white', 'wc'); F(1, 0.25, 17.5, 1.5, 18.75, 0, 2.8, 'white', 'vanity')
+# bedroom 2 (north-west), bed head south
+F(1, 1.5, 26.3, 6.5, 32.8, 0, 1.8, 'linen', 'bed'); F(1, 1.5, 26.3, 6.5, 26.65, 0, 3.6, 'woodDark', 'headboard')
+F(1, 8, 30.5, 9.75, 35.5, 0, 7, 'woodDark', 'wardrobe')
+F(1, 0.3, 36, 1.8, 37.6, 0, 1.4, 'white', 'wc'); F(1, 3.5, 36.5, 4.75, 37.75, 0, 2.8, 'white', 'vanity')
+# lounge + gallery
 F(1, 12.5, 6.3, 17.5, 8.3, 0.3, 1.5, 'fabric', 'window seat')
 F(1, 17.5, 10, 19.75, 15.5, 0.3, 1.5, 'fabric', 'sofa'); F(1, 19.1, 10, 19.75, 15.5, 1.5, 2.9, 'fabric', 'sofa back')
 F(1, 13.5, 11, 15.8, 13.8, 0, 1.3, 'woodDark', 'table')
 F(1, 19.2, 18, 19.75, 24, 0, 7, 'woodDark', 'bookshelf'); F(1, 15, 19.5, 16.5, 21, 0, 1.6, 'fabric', 'armchair'); F(1, 15, 22.5, 16.5, 24, 0, 1.6, 'fabric', 'armchair')
-F(1, 2, 36, 8, 37.75, 2.4, 2.5, 'woodDark', 'desk'); F(1, 4.3, 34.2, 5.7, 35.5, 0, 1.5, 'fabric', 'chair')
-F(1, 0.25, 27, 1.1, 33, 0, 7, 'woodDark', 'bookshelf'); F(1, 6, 27, 9.7, 30, 0, 1.5, 'fabric', 'daybed')
 # terrace: pergola (centre-east), solar over the lounge, tank in the south-west
 x = 10.6
 while x < 20:
@@ -547,14 +553,14 @@ def spot(name, x, y, h, power, rot, size=35):
 
 
 area('living light', 12.5, 32, 19.2, 4, 500)
-area('dining light', 15, 21.5, 9.2, 2, 180)
+area('lounge light g', 15, 21.5, 9.2, 2, 150)
 area('kitchen light', 16.75, 11.5, 9.2, 3, 180)
 area('foyer light', 11.75, 11, 9.2, 1.5, 60)
-area('bed1 light', 5, 10.5, 9.2, 3, 120)
+area('dining room light', 5, 10.5, 9.2, 3, 150)
 area('lounge light', 15, 11.5, 19.2, 3, 150)
 area('gallery light', 15, 21.5, 19.2, 3, 150)
-area('bed2 light', 5, 10.5, 19.2, 3, 120)
-area('study light', 5, 32, 19.2, 3, 120)
+area('bed1 light', 5, 10.5, 19.2, 3, 120)
+area('bed2 light', 5, 30, 19.2, 3, 120)
 spot('porch downlight', 11.8, 4.5, 19.2, 250, (0, 0, 0), 60)
 spot('frame uplight west', 0.2, 4.2, 0.3, 120, (math.radians(180), 0, 0), 25)
 spot('frame uplight east', 19.8, 4.2, 0.3, 120, (math.radians(180), 0, 0), 25)
