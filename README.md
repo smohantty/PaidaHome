@@ -32,12 +32,13 @@ The HTML pages open directly in a browser; there's no build step. The 3D model l
 
 | Floor | Spaces |
 |---|---|
-| Ground | Porch, double-height living + dining, dog-leg stair, kitchen (NW), Bedroom 1 + attached Bath 1 |
-| First | Gallery lounge over the living room, Bedroom 2 + attached Bath 2 (stacked over Bath 1), study / flex room |
-| Terrace | Stair room with water tank, pergola deck, solar roof, front concrete frame |
+| Ground | Bedroom 1 (SW) + attached bath (W), foyer with main door in pada 4, kitchen (SE), dining (centre), stair (W), double-height living (NE) with north glass wall, pooja room (NE corner), store + powder room (NW) |
+| First | Master Bedroom 2 (SW) + attached bath, lounge over the kitchen, gallery and walkway over the living room, study (NW) |
+| Terrace | Stair room (W), water tank (SW), solar panels, pergola deck, open north-east |
 
+- Vastu: 12 of 13 checks met. The 13th, more open space on the north than the south, depends on setback bylaws.
 - Living room ceiling: about 19′6″ (double height)
-- Enclosed floor area: about 1,170 sq ft (the void isn't counted)
+- Enclosed floor area: about 1,240 sq ft (the void isn't counted)
 - Floor-to-floor height: 10′
 
 ## Assumptions to confirm

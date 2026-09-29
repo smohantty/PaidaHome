@@ -77,7 +77,7 @@ select{font:13px var(--f-body);color:var(--ink);background:transparent;border:1p
 
 <aside class="panel">
 <details open>
-  <summary><div><h1>20′ × 40′ Modern Duplex</h1><div class="sub">G+1 · 2 BHK · double-height living · south-facing</div></div></summary>
+  <summary><div><h1>20′ × 40′ Modern Duplex</h1><div class="sub">G+1 · 2 BHK · vastu layout · south-facing</div></div></summary>
   <div class="grp">
     <div class="lab">View</div>
     <div class="seg" id="mode">
@@ -128,55 +128,61 @@ const LEVELS = [
   { name: 'Ground floor', wallH: 9.5,
     rooms: [
       { n: 'Front setback', r: [0,0,20,3], f: 'paving', note: 'Gate and two-wheeler parking. Assumes a 3′ front setback.' },
-      { n: 'Sit-out', r: [0,3,12,3], f: 'paving', note: 'Open sit-out with planters in front of the living-room window.' },
-      { n: 'Porch', r: [12,3,8,3], f: 'stone', note: 'Entrance porch. The main door is on the south wall, east of centre.' },
-      { n: 'Living + Dining', r: [0,6,20,11], f: 'wood', note: 'Double-height living room with a 19½′ ceiling and a full-height glass wall to the south. The dining table sits under the first-floor gallery at the back.' },
-      { n: 'Stair', r: [0,17,10,7], f: 'stone', note: 'Dog-leg stair: 16 risers of 7½″, 11″ treads, 3′6″ landing on the west wall. Climbs clockwise.' },
-      { n: 'Passage', r: [10,17,4,10], f: 'tile', note: 'Links living, stair, kitchen, wash and Bedroom 1.' },
-      { n: 'Wash', r: [14,17,6,4], f: 'tile', note: 'Wash basin counter and store niche.' },
-      { n: 'Bath 1', r: [14,21,6,6], f: 'bath', note: 'Attached to Bedroom 1. No outside wall, so it needs an exhaust ducted to the rear.' },
-      { n: 'Kitchen', r: [0,24,10,14], f: 'tile', note: 'North-west kitchen. The hob is on the east counter so you cook facing east. Sink under the north window, tall storage on the west wall, back door to the utility strip.' },
-      { n: 'Bedroom 1', r: [10,27,10,11], f: 'wood2', note: 'Ground-floor bedroom with attached Bath 1. The bed head is to the east, as vastu advises. Good for parents or guests.' },
-      { n: 'Rear setback', r: [0,38,20,2], f: 'paving', note: '2′ utility strip with the back door. Septic tank chamber in the north-west, underground water sump in the north-east.' }
+      { n: 'Front garden', r: [0,3,9,3], f: 'paving', note: 'Planted strip in front of Bedroom 1.' },
+      { n: 'Porch', r: [9,3,5,3], f: 'stone', note: 'Entrance porch. The main door is on the south wall in pada 4, just east of centre.' },
+      { n: 'Planter', r: [14,3,6,3], f: 'paving', note: 'Planter bed in front of the kitchen window.' },
+      { n: 'Bedroom 1', r: [0,6,10,9], f: 'wood2', note: 'South-west bedroom (vastu: heaviest, most stable corner). Bed head to the south. Walk-through dress area to Bath 1.' },
+      { n: 'Bath 1', r: [0,15,6,4], f: 'bath', note: 'Attached bath in the west zone, which vastu allows for toilets. Needs an exhaust duct because the west wall is shared.' },
+      { n: 'Dress', r: [6,15,4,4], f: 'wood2', note: 'Wardrobe area between Bedroom 1 and Bath 1.' },
+      { n: 'Foyer', r: [10,6,3.5,11], f: 'stone', note: 'Entrance foyer from the pada-4 main door to the dining area. Shoe cabinet on the west wall.' },
+      { n: 'Kitchen', r: [13.5,6,6.5,11], f: 'tile', note: 'South-east kitchen (Agni corner). Hob on the east wall so you cook facing east, sink in the north-east of the kitchen, fridge in its south-west.' },
+      { n: 'Stair', r: [0,19,10,7], f: 'stone', note: 'Dog-leg stair in the west zone: 16 risers of 7½″, 11″ treads, 3′6″ landing on the west wall. Climbs clockwise.' },
+      { n: 'Dining', r: [10,17,10,9], f: 'wood', note: 'Dining in the centre-east, next to the kitchen. The centre of the house (Brahmasthan) stays free of walls.' },
+      { n: 'Store', r: [0,26,5,7], f: 'tile', note: 'Store room in the north-west.' },
+      { n: 'Powder room', r: [0,33,5,5], f: 'bath', note: 'Common toilet in the north-west corner, the preferred vastu zone, with a north ventilator.' },
+      { n: 'Living', r: [5,26,15,12], f: 'wood', note: 'Double-height living room (19½′ ceiling) in the north-east, with a full-height north glass wall. Vastu wants the north-east open, tall and bright.' },
+      { n: 'Pooja', r: [16,34,4,4], f: 'marble', lift: 0.03, note: 'Pooja room in the north-east corner, the most auspicious zone. Deity faces west, so you pray facing east.' },
+      { n: 'Rear setback', r: [0,38,20,2], f: 'paving', note: '2′ strip with a planted green wall. Septic chamber in the north-west, underground water sump in the north-east.' }
     ],
-    encl: [[0,6,20,11],[0,17,10,7],[10,17,4,10],[14,17,6,4],[14,21,6,6],[0,24,10,14],[10,27,10,11]],
-    open: [[10,17,14,17],[10,17,10,20.5],[14,17,14,21],[10,24,10,27]],
-    doors: [[14.5,6,18,6],[10.4,27,13.4,27],[15,27,17.5,27],[1,38,3.5,38]],
+    encl: [[0,6,10,9],[0,15,6,4],[6,15,4,4],[10,6,3.5,11],[13.5,6,6.5,11],[0,19,10,7],[10,17,10,9],[0,26,5,7],[0,33,5,5],[5,26,15,12],[16,34,4,4]],
+    open: [[10,17,13.5,17],[10,19,10,22.5],[11,26,19,26],[14.5,17,17,17],[6.5,15,9.5,15],[16,34.5,16,37.5]],
+    doors: [[10.3,6,13.3,6],[10,11.5,10,14.5],[1,15,3.5,15],[5,27,5,29.5],[5,34,5,36.5]],
     glassdoors: [],
-    windows: [[0,6,12,6,0,9.5],[4.5,38,8.5,38,3.5],[12,38,18,38,3]],
-    parapets: [[0,0,12,0,4],[0,0,0,6,4],[20,0,20,6,4],[0,40,20,40,6],[0,38,0,40,6],[20,38,20,40,6]]
+    windows: [[6,6,9.5,6,3,7],[16.5,6,19.5,6,3.5,7],[1.5,38,3.5,38,5.5,7],[5.5,38,16,38,0,9.5]],
+    parapets: [[0,0,8,0,4],[16,0,20,0,4],[0,0,0,6,4],[20,0,20,6,4],[0,40,20,40,5],[0,38,0,40,5],[20,38,20,40,5]]
   },
   { name: 'First floor', wallH: 9.5,
     rooms: [
-      { n: 'Open to living below', r: [0,6,20,7], f: 'wood', noTile: true, note: '' },
-      { n: 'Gallery', r: [10,13,10,8], f: 'wood', note: 'Upstairs lounge that looks down into the double-height living room over a glass rail. Pooja unit on the east wall.' },
-      { n: 'Stair', r: [0,17,10,7], f: 'stone', noTile: true, note: 'Stair continues up to the terrace stair room.' },
-      { n: 'Passage', r: [10,21,4,6], f: 'tile', note: 'Links the gallery, Bedroom 2, Bath 2 and the study.' },
-      { n: 'Bath 2', r: [14,21,6,6], f: 'bath', note: 'Attached to Bedroom 2. Sits directly above Bath 1, so the plumbing runs straight down.' },
-      { n: 'Bedroom 2', r: [10,27,10,11], f: 'wood2', note: 'Upstairs bedroom above Bedroom 1, with attached Bath 2 and a wide north window. Bed head to the east.' },
-      { n: 'Study / flex', r: [0,24,10,14], f: 'wood', note: '10′ × 14′ room over the kitchen with a north window. Can become a third bedroom later.' }
+      { n: 'Bedroom 2', r: [0,6,10,9], f: 'wood2', note: 'Master bedroom in the south-west of the top floor, the place vastu gives the head of the family. Bed head to the south.' },
+      { n: 'Bath 2', r: [0,15,6,4], f: 'bath', note: 'Attached bath in the west zone, stacked over Bath 1.' },
+      { n: 'Dress', r: [6,15,4,4], f: 'wood2', note: 'Wardrobe area between Bedroom 2 and Bath 2.' },
+      { n: 'Lounge', r: [10,6,10,11], f: 'wood', note: 'Family lounge over the kitchen and foyer. Window seat behind the wood fins on the south.' },
+      { n: 'Stair', r: [0,19,10,7], f: 'stone', noTile: true, note: 'Stair continues up to the terrace stair room.' },
+      { n: 'Gallery', r: [10,17,10,9], f: 'wood', note: 'Gallery over the dining area, looking north into the double-height living room over a glass rail.' },
+      { n: 'Walkway', r: [10,26,3,3], f: 'wood', note: 'Bridge from the gallery to the study.' },
+      { n: 'Study', r: [0,26,10,12], f: 'wood', note: 'North-west study with a north window. Can become a third bedroom.' },
+      { n: 'Open to living below', r: [13,26,7,12], f: 'wood', noTile: true, note: '' }
     ],
-    encl: [[0,17,10,7],[10,21,4,6],[14,21,6,6],[0,24,10,14],[10,27,10,11]],
-    extraWalls: [[0,6,0,17],[20,6,20,21],[0,6,20,6]],
-    open: [[10,20.5,10,24],[10,21,14,21]],
-    doors: [[10.4,27,13.4,27],[15,27,17.5,27],[10,24.3,10,26.8]],
+    encl: [[0,6,10,9],[0,15,6,4],[6,15,4,4],[10,6,10,11],[0,19,10,7],[0,26,10,12]],
+    extraWalls: [[20,17,20,38],[10,38,20,38]],
+    open: [[10,22.5,10,26],[10.5,17,19.5,17],[6.5,15,9.5,15]],
+    doors: [[10,11.5,10,14.5],[1,15,3.5,15],[10,26.3,10,28.8]],
     glassdoors: [],
-    windows: [[0,6,12,6,0,9.5],[2,38,8,38,3],[12,38,18,38,3]],
-    clad: [[12,6,20,6]],
-    rails: [[10,13,20,13],[10,13,10,17]],
+    windows: [[6,6,9.5,6,3,7],[12,6,18,6,2,7],[2,38,8,38,3,7],[10,38,20,38,0,9.5]],
+    clad: [[10,6,12,6],[18,6,20,6]],
+    rails: [[13,26,20,26],[13,26,13,29],[10,29,13,29]],
     parapets: []
   },
   { name: 'Terrace', wallH: 8,
     rooms: [
-      { n: 'Roof terrace', r: [0,3,20,14], f: 'terrace', note: 'Terrace on the roof of the double-height living room. The overhead water tank sits on a plinth in the south-west corner.' },
-      { n: 'Stair room', r: [0,17,10,7], f: 'stone', noTile: true, note: 'Stair headroom with a door to the pergola deck.' },
-      { n: 'Pergola deck', r: [10,17,10,10], f: 'deck', note: 'Shaded sit-out under a slatted pergola, next to the stair-room door.' },
-      { n: 'Solar roof', r: [0,24,10,14], f: 'terrace', note: 'Roof of the study. Room for about 3 kW of solar panels, tilted 13° to the south.' },
-      { n: 'Rear terrace', r: [10,27,10,11], f: 'terrace', note: 'Roof of Bedroom 2. Space for drying and a terrace garden.' }
+      { n: 'Roof terrace', r: [0,3,20,16], f: 'terrace', note: 'Overhead water tank on a plinth in the south-west corner; solar panels over the lounge, tilted south.' },
+      { n: 'Stair room', r: [0,19,10,7], f: 'stone', noTile: true, note: 'Stair headroom in the west, with a door to the pergola deck.' },
+      { n: 'Pergola deck', r: [10,19,10,7], f: 'deck', note: 'Shaded sit-out under a slatted pergola.' },
+      { n: 'Open terrace', r: [0,26,20,12], f: 'terrace', note: 'Roof over the living room and study. Kept open and light in the north-east: no tanks or heavy planters here.' }
     ],
-    encl: [[0,17,10,7]],
+    encl: [[0,19,10,7]],
     open: [], glassdoors: [], windows: [],
-    doors: [[10,20.7,10,23.7]],
+    doors: [[10,20.2,10,23.2]],
     parapets: [[0,6,0,38,3.5],[20,6,20,38,3.5],[0,38,20,38,3.5]]
   }
 ];
@@ -312,12 +318,12 @@ function buildWalls(lv, e, g) {
 function stairs(e, g, info) {
   const r = FLOOR / 16, t = 6.5 / 7;
   const step = (x1, y1, x2, y2, top) => { const m = box(x1, y1, x2, y2, Math.max(e, top - 1), top, M.stone, g); m.userData.room = info; pickables.push(m); };
-  for (let k = 1; k <= 7; k++) step(10 - k * t, 17, 10 - (k - 1) * t, 20.5, e + k * r);
-  step(0, 17, 3.5, 24, e + 8 * r);
-  for (let k = 1; k <= 7; k++) step(3.5 + (k - 1) * t, 20.5, 3.5 + k * t, 24, e + 8 * r + k * r);
+  for (let k = 1; k <= 7; k++) step(10 - k * t, 19, 10 - (k - 1) * t, 22.5, e + k * r);
+  step(0, 19, 3.5, 26, e + 8 * r);
+  for (let k = 1; k <= 7; k++) step(3.5 + (k - 1) * t, 22.5, 3.5 + k * t, 26, e + 8 * r + k * r);
   // centre rail between flights
   const rail = new THREE.Mesh(new THREE.BoxGeometry(6.6, 0.12, 0.12), M.metal);
-  rail.position.copy(V(6.75, 20.5, e + 5 + 3)); g.add(rail);
+  rail.position.copy(V(6.75, 22.5, e + 5 + 3)); g.add(rail);
 }
 
 function label(text, pos, cls = 'lbl') {
@@ -331,10 +337,10 @@ const levelObjs = LEVELS.map((lv, i) => {
   group.add(furn); scene.add(group);
   if (i === 0) box(0, 3, 20, 38, -0.5, 0, M.slab, group);
   // first-floor slab leaves the double-height void over the living room and the stair well open
-  if (i === 1) slab([[10, 13], [20, 13], [20, 38], [0, 38], [0, 24], [10, 24]], [], e - 0.5, 0.5, group);
+  if (i === 1) slab([[0, 6], [20, 6], [20, 26], [13, 26], [13, 29], [10, 29], [10, 38], [0, 38], [0, 26], [10, 26], [10, 19], [0, 19]], [], e - 0.5, 0.5, group);
   if (i === 2) {
-    slab([[0, 3], [20, 3], [20, 38], [0, 38], [0, 24], [10, 24], [10, 17], [0, 17]], [], e - 0.5, 0.5, group);
-    box(-0.25, 16.75, 10.25, 24.25, e + 8, e + 8.5, M.frame, group);
+    slab([[0, 3], [20, 3], [20, 38], [0, 38], [0, 26], [10, 26], [10, 19], [0, 19]], [], e - 0.5, 0.5, group);
+    box(-0.25, 18.75, 10.25, 26.25, e + 8, e + 8.5, M.frame, group);
   }
   buildWalls(lv, e, group);
   for (const rm of lv.rooms) {
@@ -357,51 +363,56 @@ stairs(FLOOR, levelObjs[1].group, stairInfo(1));
 
 // main door leaf, opened inward
 {
-  const pivot = new THREE.Group(); pivot.position.copy(V(14.5, 6, 0));
-  const leaf = new THREE.Mesh(new THREE.BoxGeometry(3.5, 7, 0.18), M.woodDark);
-  leaf.position.set(1.75, 3.5, 0); leaf.castShadow = true; pivot.add(leaf);
+  const pivot = new THREE.Group(); pivot.position.copy(V(10.3, 6, 0));
+  const leaf = new THREE.Mesh(new THREE.BoxGeometry(3, 7, 0.18), M.woodDark);
+  leaf.position.set(1.5, 3.5, 0); leaf.castShadow = true; pivot.add(leaf);
   pivot.rotation.y = THREE.MathUtils.degToRad(70);
   levelObjs[0].group.add(pivot);
 }
 
 // ---------- furniture ----------
 const F = (lvl, x1, y1, x2, y2, h1, h2, mat) => box(x1, y1, x2, y2, lvl * FLOOR + h1, lvl * FLOOR + h2, mat, levelObjs[lvl].furn);
-// ground: living + dining
-F(0, 0.4, 8, 3, 15, 0, 1.5, M.fabric); F(0, 0.4, 8, 1.1, 15, 1.5, 2.9, M.fabric);
-F(0, 4.5, 10, 7, 13, 0, 1.3, M.wood);
-F(0, 19, 9, 19.7, 14, 0, 1.8, M.woodDark); F(0, 19.65, 9.8, 19.75, 13.2, 3, 5.6, M.black);
-F(0, 12, 13.2, 15, 16.4, 2.35, 2.5, M.wood); F(0, 13.2, 14.4, 13.8, 15.2, 0, 2.35, M.frame);
-for (const [cx, cy] of [[11.3, 14], [11.3, 15.6], [15.7, 14], [15.7, 15.6]]) F(0, cx - 0.6, cy - 0.6, cx + 0.6, cy + 0.6, 0, 1.5, M.frame);
-// pendant light in the double-height void
-F(0, 5.9, 9.4, 6.1, 9.6, 12, 19.5, M.frame);
+for (const L of [0, 1]) {
+  // south-west bedroom: bed head to the south, wardrobe in the dress area, bath fixtures
+  F(L, 0.5, 6.3, 5.5, 12.8, 0, 1.8, M.white); F(L, 0.5, 6.3, 5.5, 6.65, 0, 3.6, L ? M.clad : M.woodDark);
+  F(L, 6.25, 17.1, 9.75, 18.75, 0, 7, M.wood);
+  F(L, 4.5, 15.3, 5.75, 16.8, 0, 1.4, M.white); F(L, 0.25, 17.5, 1.5, 18.75, 0, 2.8, M.white);
+}
+// foyer shoe cabinet
+F(0, 10.25, 7.5, 11, 10.5, 0, 3.5, M.woodDark);
+// kitchen (south-east): fridge SW, hob on the east wall (cook faces east), sink counter NE
+F(0, 13.75, 6.25, 16, 8.5, 0, 6, M.metal);
+F(0, 18, 6.25, 19.75, 14.5, 0, 3, M.white); F(0, 18.3, 8.5, 19.5, 11, 3, 3.08, M.black);
+F(0, 16.5, 14.75, 19.75, 16.75, 0, 3, M.white);
+// dining (centre-east)
+F(0, 13, 20, 17, 23, 2.35, 2.5, M.wood); F(0, 14.7, 21.2, 15.3, 21.8, 0, 2.35, M.frame);
+for (const [cx, cy] of [[13.8, 19.3], [16.2, 19.3], [13.8, 23.7], [16.2, 23.7], [12.3, 21.5], [17.7, 21.5]]) F(0, cx - 0.55, cy - 0.55, cx + 0.55, cy + 0.55, 0, 1.5, M.frame);
+// living (north-east, double height)
+F(0, 5.3, 28, 7.8, 35, 0, 1.5, M.fabric); F(0, 5.3, 28, 6, 35, 1.5, 2.9, M.fabric);
+F(0, 10, 30, 12.5, 33, 0, 1.3, M.wood);
+F(0, 19.2, 28, 19.75, 32, 0, 1.8, M.woodDark); F(0, 19.65, 28.5, 19.75, 31.5, 3, 5.6, M.black);
+F(0, 12.4, 31.9, 12.6, 32.1, 12, 19.5, M.frame);
 { const lamp = new THREE.Mesh(new THREE.CylinderGeometry(1.6, 1.6, 0.25, 32), std('#F2E6C9', { emissive: '#F2D9A0', emissiveIntensity: 0.6 }));
-  lamp.position.copy(V(6, 9.5, 12)); levelObjs[0].furn.add(lamp); }
-// tall indoor plant by the glass
-F(0, 10.4, 6.6, 11.4, 7.6, 0, 1.4, M.frame); F(0, 10.1, 6.3, 11.7, 7.9, 1.4, 5.5, M.green);
-// kitchen
-F(0, 0.25, 27, 2.25, 37.75, 0, 7, M.white); F(0, 2.25, 35.75, 7.75, 37.75, 0, 3, M.white);
-F(0, 7.75, 28, 9.75, 37.75, 0, 3, M.white); F(0, 8.1, 30.5, 9.4, 33.5, 3, 3.08, M.black); // hob on the east counter: cook faces east
-F(0, 0.3, 24.3, 2.6, 26.6, 0, 6, M.metal);
-// bedroom 1 + bath 1 + wash
-F(0, 13.25, 31, 19.75, 36, 0, 1.8, M.white); F(0, 19.4, 31, 19.75, 36, 0, 3.6, M.woodDark); // head to the east
-F(0, 17.7, 27.25, 19.75, 29.25, 0, 7, M.wood);
-F(0, 18.5, 24.5, 19.75, 26.2, 0, 1.4, M.white);
-F(0, 18.2, 17.3, 19.75, 20.5, 0, 2.8, M.white);
-// first: gallery lounge + pooja unit
-F(1, 17.5, 14, 19.75, 19, 0, 1.5, M.fabric); F(1, 19.1, 14, 19.75, 19, 1.5, 2.9, M.fabric);
-F(1, 13.5, 15, 15.8, 17.8, 0, 1.3, M.wood);
-F(1, 19.2, 19.4, 19.75, 20.9, 0, 4, M.woodDark);
-// bedroom 2 + bath 2
-F(1, 13.25, 31, 19.75, 36, 0, 1.8, M.white); F(1, 19.4, 31, 19.75, 36, 0, 3.6, M.clad); // head to the east
-F(1, 17.7, 27.25, 19.75, 29.25, 0, 7, M.wood);
-F(1, 18.5, 24.5, 19.75, 26.2, 0, 1.4, M.white);
-// study
-F(1, 0.3, 30, 2.5, 35, 0, 2.5, M.wood); F(1, 6, 34, 9.7, 37.7, 0, 1.5, M.fabric); F(1, 0.25, 24.5, 1.1, 29, 0, 7, M.woodDark);
-// terrace pergola over the deck
-for (let x = 10.6; x < 20; x += 1.1) F(2, x, 17.2, x + 0.3, 26.8, 8.2, 8.6, M.clad);
-F(2, 10, 17.2, 20, 17.6, 7.8, 8.2, M.frame); F(2, 10, 26.4, 20, 26.8, 7.8, 8.2, M.frame);
-F(2, 19.4, 17.2, 19.8, 17.6, 0, 7.8, M.frame); F(2, 19.4, 26.4, 19.8, 26.8, 0, 7.8, M.frame);
-F(2, 12, 20, 16, 22.5, 0, 1.4, M.fabric); F(2, 15, 34, 19.5, 37.5, 0, 1.6, M.green);
+  lamp.position.copy(V(12.5, 32, 12)); levelObjs[0].furn.add(lamp); }
+F(0, 13.5, 36.3, 14.5, 37.3, 0, 1.4, M.frame); F(0, 13.2, 36, 14.8, 37.6, 1.4, 5.5, M.green);
+box(16, 34, 20, 38, 9.5, 10, M.slab, levelObjs[0].group);             // pooja room ceiling
+F(0, 19.2, 35, 19.75, 37, 0, 4, M.woodDark);                            // pooja shelf, deity faces west
+box(5, 39.55, 19, 39.75, 0.5, 5, M.green, levelObjs[0].group);          // green wall on the rear compound wall
+// store + powder room
+F(0, 0.25, 26.5, 1.5, 32.5, 0, 7, M.woodDark);
+F(0, 0.3, 36, 1.8, 37.6, 0, 1.4, M.white); F(0, 0.25, 33.5, 1.5, 35, 0, 2.8, M.white);
+// first: lounge, gallery, study
+F(1, 12.5, 6.3, 17.5, 8.3, 0, 1.5, M.fabric);
+F(1, 17.5, 10, 19.75, 15.5, 0, 1.5, M.fabric); F(1, 19.1, 10, 19.75, 15.5, 1.5, 2.9, M.fabric);
+F(1, 13.5, 11, 15.8, 13.8, 0, 1.3, M.wood);
+F(1, 19.2, 18, 19.75, 24, 0, 7, M.woodDark); F(1, 15, 19.5, 16.5, 21, 0, 1.6, M.fabric); F(1, 15, 22.5, 16.5, 24, 0, 1.6, M.fabric);
+F(1, 2, 36, 8, 37.75, 0, 2.5, M.wood); F(1, 4.3, 34.2, 5.7, 35.5, 0, 1.5, M.frame);
+F(1, 0.25, 27, 1.1, 33, 0, 7, M.woodDark); F(1, 6, 27, 9.7, 30, 0, 1.5, M.fabric);
+// terrace pergola (centre-east), clear of the north-east
+for (let x = 10.6; x < 20; x += 1.1) F(2, x, 19.2, x + 0.3, 25.8, 8.2, 8.6, M.clad);
+F(2, 10, 19.2, 20, 19.6, 7.8, 8.2, M.frame); F(2, 10, 25.4, 20, 25.8, 7.8, 8.2, M.frame);
+F(2, 19.4, 19.2, 19.8, 19.6, 0, 7.8, M.frame); F(2, 19.4, 25.4, 19.8, 25.8, 0, 7.8, M.frame);
+F(2, 12, 21, 16, 23.5, 0, 1.4, M.fabric); F(2, 1, 13, 5, 17, 0, 1.6, M.green);
 
 // ---------- modern facade: charcoal frame, wood fins ----------
 {
@@ -411,13 +422,12 @@ F(2, 12, 20, 16, 22.5, 0, 1.4, M.fabric); F(2, 15, 34, 19.5, 37.5, 0, 1.6, M.gre
   const g2 = levelObjs[2].group;
   box(-0.45, 2.6, 20.45, 3.4, 19.5, 23.5, M.frame, g2);        // top band = front parapet
   box(0, 3, 20, 6, 19.4, 19.55, M.frame, g2);                  // soffit
-  for (let x = 12.4; x < 19.6; x += 0.8) box(x, 5.2, x + 0.22, 5.8, 10.5, 19.3, M.clad, levelObjs[1].group); // vertical fins over the clad block
-  box(0, 5.7, 12, 6.3, 9.5, 10, M.frame, levelObjs[1].group);  // transom band between the two glass tiers
+  for (let x = 10.4; x < 19.6; x += 0.8) box(x, 5.2, x + 0.22, 5.8, 10.5, 19.3, M.clad, levelObjs[1].group); // vertical fins over the clad block
 }
 // terrace: solar + water tank
-for (const cy of [27.5, 31.8, 36.1]) {
+for (const cy of [8.3, 11.8, 15.3]) {
   const p = new THREE.Mesh(new THREE.BoxGeometry(8.4, 0.15, 3.3), M.solar);
-  p.position.copy(V(5, cy, 2 * FLOOR + 1.3)); p.rotation.x = THREE.MathUtils.degToRad(13); p.castShadow = true;
+  p.position.copy(V(15, cy, 2 * FLOOR + 1.3)); p.rotation.x = THREE.MathUtils.degToRad(13); p.castShadow = true;
   levelObjs[2].furn.add(p);
 }
 {
