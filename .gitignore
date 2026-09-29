@@ -1,0 +1,4 @@
+renders/*.png
+*.blend
+*.blend1
+.DS_Store

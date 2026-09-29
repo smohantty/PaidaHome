@@ -49,6 +49,9 @@ details:not([open]) summary::after{content:"+"}
 select{font:13px var(--f-body);color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:4px;padding:4px 6px}
 .readout{font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
 .hint{font-size:12px;color:var(--muted);margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+.links{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:13px}
+.links a{color:var(--accent);font-weight:500;text-decoration:none;border-bottom:1px solid currentColor}
+.links a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .info{position:fixed;left:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));width:min(300px,calc(100vw - 24px));background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 14px;backdrop-filter:blur(8px)}
 .info h2{font-family:var(--f-display);font-size:20px;margin:0;font-weight:700}
 .info .meta{font-family:var(--f-mono);font-size:12px;color:var(--accent);margin-top:2px;font-variant-numeric:tabular-nums}
@@ -101,6 +104,7 @@ select{font:13px var(--f-body);color:var(--ink);background:transparent;border:1p
     </select><span class="readout" id="sunOut"></span></div>
   </div>
   <div class="hint">Drag to orbit · scroll or pinch to zoom · right-drag or two fingers to pan. Tap a room for details.</div>
+  <nav class="links"><a href="renders.html">Photoreal renders</a><a href="plans.html">Floor plans</a><a href="https://github.com/smohantty/PaidaHome">Source</a></nav>
 </details>
 </aside>
 

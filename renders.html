@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PaidaHome Renders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: dark gallery wall — hero render full width, then a two-column grid of views */
+:root{
+  --bg:#F1F3F4; --ink:#1B2830; --muted:#5A6B76; --line:#CDD5DA; --accent:#23658A; --card:#FFFFFF;
+  --f-display:"Archivo Narrow","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0F1519;--ink:#E2E9ED;--muted:#98A8B2;--line:#2C3A43;--accent:#6DB4D8;--card:#172026;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1519;--ink:#E2E9ED;--muted:#98A8B2;--line:#2C3A43;--accent:#6DB4D8;--card:#172026;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 16px 56px}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px 32px;border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:22px}
+h1{font-family:var(--f-display);font-size:clamp(30px,5vw,44px);line-height:1.02;margin:0;text-wrap:balance}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:var(--accent);font-weight:500;text-decoration:none;border-bottom:1px solid currentColor}
+nav a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+figure{margin:0;background:var(--card);border:1px solid var(--line)}
+figure.hero{grid-column:1/-1}
+figure img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;background:var(--line)}
+figcaption{padding:10px 14px 12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+figcaption strong{font-family:var(--f-display);font-size:18px}
+figcaption span{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+@media (max-width:760px){.grid{grid-template-columns:minmax(0,1fr)}}
+footer{margin-top:28px;color:var(--muted);font-size:13.5px;max-width:70ch}
+code{font-family:var(--f-mono);font-size:12.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div><div class="eyebrow">Cycles renders · Blender</div><h1>20′ × 40′ Modern Duplex</h1></div>
+  <nav><a href="index.html">Interactive 3D</a><a href="plans.html">Floor plans</a><a href="https://github.com/smohantty/PaidaHome">Source</a></nav>
+</header>
+<div class="grid">
+  <figure class="hero"><img src="renders/front.jpg" alt="Street view of the south facade: full-height glass living room inside a charcoal concrete frame, teak-clad panel with vertical fins" loading="eager">
+    <figcaption><strong>Street view</strong><span>21 Dec · 11:00 · winter sun on the south glass</span></figcaption></figure>
+  <figure><img src="renders/living.jpg" alt="Inside the double-height living room looking towards the dining area under the gallery" loading="lazy">
+    <figcaption><strong>Double-height living</strong><span>21 Dec · 10:00</span></figcaption></figure>
+  <figure><img src="renders/gallery.jpg" alt="View from the first-floor gallery down into the living room and out through the glass wall" loading="lazy">
+    <figcaption><strong>From the gallery</strong><span>21 Dec · 10:00</span></figcaption></figure>
+  <figure><img src="renders/dusk.jpg" alt="The house at dusk with warm interior lights glowing through the glass facade" loading="lazy">
+    <figcaption><strong>Dusk</strong><span>Equinox · 18:00 · lights on</span></figcaption></figure>
+  <figure><img src="renders/aerial.jpg" alt="Aerial view showing the roof terrace, pergola, solar panels and water tank" loading="lazy">
+    <figcaption><strong>Aerial</strong><span>Equinox · 15:00</span></figcaption></figure>
+</div>
+<footer>These are concept renders from <code>blender/render_house.py</code>, which builds the same geometry as the interactive model. Materials are placeholders. Final finishes, fixtures and structure will change once working drawings are done.</footer>
+</div>
+</body>
+</html>
