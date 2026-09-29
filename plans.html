@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20×40 Modern Duplex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: drafting-sheet — title block, three plans side by side, then schedule + vastu + notes */
+:root{
+  --bg:#EEF2F4; --paper:#FFFFFF; --ink:#1B2830; --muted:#5A6B76; --line:#C3CED5;
+  --accent:#23658A; --room:#FFFFFF; --wet:#E1EDF4; --open:#E7ECEF; --glass:#A9CFE2; --road:#D5DCE0;
+  --good:#2E7D4F; --warn:#A8671B;
+  --f-display:"Archivo Narrow","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11181D; --paper:#182128; --ink:#E2E9ED; --muted:#94A5AF; --line:#34444E;
+  --accent:#6DB4D8; --room:#1C262D; --wet:#1F3441; --open:#222D34; --glass:#4B8BAA; --road:#2A363D;
+  --good:#6CC592; --warn:#E0A55A; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#11181D; --paper:#182128; --ink:#E2E9ED; --muted:#94A5AF; --line:#34444E;
+  --accent:#6DB4D8; --room:#1C262D; --wet:#1F3441; --open:#222D34; --glass:#4B8BAA; --road:#2A363D;
+  --good:#6CC592; --warn:#E0A55A; color-scheme:dark;}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 16px 56px}
+header{display:flex;flex-wrap:wrap;gap:16px 40px;align-items:end;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:16px}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(30px,5vw,46px);line-height:1.02;margin:0;letter-spacing:-.01em;text-wrap:balance}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.lede{max-width:62ch;color:var(--muted);margin:8px 0 0}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);background:var(--paper);margin-top:20px}
+.facts div{padding:12px 14px;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-family:var(--f-display);font-size:24px;font-weight:600;font-variant-numeric:tabular-nums}
+.facts span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+@media (max-width:640px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.facts div:nth-child(2){border-right:0}.facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+h2{font-family:var(--f-display);font-size:24px;font-weight:600;margin:40px 0 12px;text-wrap:balance}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:980px){.plans{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.plans{grid-template-columns:minmax(0,1fr)}}
+figure{margin:0;background:var(--paper);border:1px solid var(--line);padding:14px 12px 10px;min-width:0}
+figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}
+figcaption strong{font-family:var(--f-display);font-size:19px;font-weight:600}
+figcaption small{font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+figure svg{display:block;width:100%;max-width:380px;height:auto;margin:0 auto}
+figure p{font-size:13px;color:var(--muted);margin:8px 2px 0}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12.5px;color:var(--muted);margin-top:12px}
+.legend i{display:inline-block;width:14px;height:10px;border:1px solid var(--ink);vertical-align:-1px;margin-right:6px}
+.cols{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px}
+@media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr)}}
+.tbl{overflow-x:auto;background:var(--paper);border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:7px 12px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:500}
+td.n{font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+th.n{text-align:right}
+tr.floor td{background:var(--open);font-family:var(--f-display);font-weight:600;font-size:15px}
+tr.total td{font-weight:600;border-bottom:0}
+.tag{font-size:11px;color:var(--muted);margin-left:6px}
+ul.check{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+ul.check li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;background:var(--paper);border:1px solid var(--line);padding:9px 12px;font-size:14px}
+ul.check .ok{color:var(--good);font-weight:700}
+ul.check .mid{color:var(--warn);font-weight:700}
+.notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;font-size:14.5px}
+@media (max-width:760px){.notes{grid-template-columns:minmax(0,1fr)}}
+.notes h3{font-family:var(--f-display);font-size:17px;margin:0 0 4px;font-weight:600}
+.notes p,.notes ul{margin:0;color:var(--ink)}
+.notes ul{padding-left:18px}
+.flag{border-left:3px solid var(--warn);padding-left:12px}
+</style>
+
+<div class="wrap">
+<header>
+  <div>
+    <div class="eyebrow">Concept plan · G+1 duplex · Sheet A-02 · revised</div>
+    <h1>20′ × 40′ Modern Duplex</h1>
+    <p class="lede">A 2-bedroom duplex on an 800 sq ft plot with the road on the south. One bedroom on each floor, each with its own attached bath. The living room is double height, open up to the roof slab, behind a full-height glass front. <a href="index.html" style="color:var(--accent)">Open the 3D model</a>.</p>
+  </div>
+</header>
+
+<div class="facts">
+  <div><b>800 sq ft</b><span>Plot · 20′ front × 40′ deep</span></div>
+  <div><b>≈ 1,170 sq ft</b><span>Enclosed floor area, not counting the void</span></div>
+  <div><b>2 BHK</b><span>1 bedroom per floor, both attached baths</span></div>
+  <div><b>19′ 6″</b><span>Living-room ceiling (double height)</span></div>
+</div>
+
+<h2>Floor plans</h2>
+<div class="plans">
+  <figure><figcaption><strong>Ground floor</strong><small>640 sq ft enclosed</small></figcaption><svg id="p-ground"></svg>
+    <p>Living rises the full two storeys behind a glass wall. Dining sits under the gallery (dashed line). Kitchen and Bedroom 1 are at the back, away from road noise.</p></figure>
+  <figure><figcaption><strong>First floor</strong><small>460 sq ft enclosed</small></figcaption><svg id="p-first"></svg>
+    <p>A gallery looks down into the living room over a glass rail. Bedroom 2 and Bath 2 sit directly above Bedroom 1 and Bath 1.</p></figure>
+  <figure><figcaption><strong>Terrace</strong><small>70 sq ft stair room</small></figcaption><svg id="p-terrace"></svg>
+    <p>Flat roof with a front concrete frame, a pergola deck, solar panels on the study roof, and the water tank on the stair room.</p></figure>
+</div>
+<div class="legend">
+  <span><i style="background:var(--room)"></i>Enclosed room</span>
+  <span><i style="background:var(--wet)"></i>Wet area (kitchen, bath)</span>
+  <span><i style="background:var(--open);border-style:dashed"></i>Open to sky / setback</span>
+  <span><i style="background:var(--glass)"></i>Window / glazed door</span>
+  <span>- - - Open connection, no wall</span><span style="color:var(--accent)">- - - Gallery edge above</span>
+</div>
+
+<div class="cols">
+  <section>
+    <h2>Room schedule</h2>
+    <div class="tbl"><table id="sched"><thead><tr><th>Space</th><th class="n">Size</th><th class="n">Area (sq ft)</th></tr></thead><tbody></tbody></table></div>
+  </section>
+  <section>
+    <h2>Vastu check for a south-facing plot</h2>
+    <ul class="check">
+      <li><span class="ok">✓</span><span><b>Main door</b> on the south wall, east of centre (pada 3–4). The south-west half is avoided.</span></li>
+      <li><span class="ok">✓</span><span><b>Kitchen</b> in the north-west. Cook facing east along the east counter.</span></li>
+      <li><span class="ok">✓</span><span><b>Staircase</b> on the west side. It climbs clockwise: west, turn north, then east.</span></li>
+      <li><span class="ok">✓</span><span><b>Water tank</b> over the stair room, in the heavier south-west half.</span></li>
+      <li><span class="ok">✓</span><span><b>Brahmasthan</b> (centre) stays open, with the passage and the double-height space.</span></li>
+      <li><span class="mid">~</span><span><b>Both bedrooms</b> are in the north-east, stacked. The double-height living takes the south-west, where vastu would put the master bedroom. This is the trade-off for the tall living room. Keep beds with the head to the south.</span></li>
+      <li><span class="mid">~</span><span><b>Pooja</b> is a wall unit on the gallery's east wall rather than a separate room.</span></li>
+    </ul>
+  </section>
+</div>
+
+<h2>Assumptions and open questions</h2>
+<div class="notes">
+  <div class="flag"><h3>No car parking</h3><p>A ground-floor bedroom and a living room use up the full 20′ width. The 3′ front setback only fits two-wheelers. If you need a car, the usual fix is stilt parking with the duplex on floors 1 and 2, or you give up Bedroom 1.</p></div>
+  <div class="flag"><h3>Check local bylaws</h3><p>This plan assumes a 3′ front setback, 2′ rear setback and no side setbacks (shared walls). That gives about 83% ground coverage. Many authorities cap coverage at 60–75% and require a side setback on plots this narrow. Confirm with your BBMP, GHMC, BDA or local authority before drawing working plans.</p></div>
+  <div><h3>Light and air</h3><p>Both side walls are party walls, so windows are only on the south and north faces. Bath 1 is in the middle of the house and needs a mechanical exhaust ducted to the rear. A 3′ × 4′ skylight over the ground-floor passage would help the middle of the house a lot.</p></div>
+  <div><h3>Glass on the south</h3><p>The concrete frame projects 3′ in front of the glass, and vertical wood fins cover the upper panel. Together they block the high summer sun and let the low winter sun in. Use double-glazed, low-E glass, with motorised blinds on the upper tier.</p></div>
+  <div><h3>Double-height living</h3><p>The ceiling is about 19½′ high. Use a ceiling fan on a long downrod or a large-blade fan, and add a pendant light on a 7′ drop. The gallery's glass rail should be 3′6″ high in toughened laminated glass.</p></div>
+  <div><h3>Stair</h3><p>Dog-leg stair, 3′6″ flights, 16 risers of 7½″ and treads of 11″, with a 3′6″ landing on the west wall. It continues up to the terrace.</p></div>
+  <div><h3>Flex room</h3><p>The first-floor study (10′ × 14′) sits over the kitchen and has a north window. It can become Bedroom 3 later with a wardrobe wall. The design has no pooja room, so this room can also hold one.</p></div>
+</div>
+</div>
+
+<script>
+const PLANS = {
+  ground: {
+    stairLabel: "UP",
+    rooms: [
+      {n:"Front setback", x:0,y:0,w:20,h:3,k:"open",sub:"gate · 2-wheelers"},
+      {n:"Sit-out",       x:0,y:3,w:12,h:3,k:"open"},
+      {n:"Porch",         x:12,y:3,w:8,h:3,k:"open"},
+      {n:"Living + Dining",x:0,y:6,w:20,h:11,k:"room",sub:"living is double height"},
+      {n:"Stair",         x:0,y:17,w:10,h:7,k:"stair"},
+      {n:"Passage",       x:10,y:17,w:4,h:10,k:"room",vert:true},
+      {n:"Wash",          x:14,y:17,w:6,h:4,k:"room"},
+      {n:"Bath 1",        x:14,y:21,w:6,h:6,k:"wet"},
+      {n:"Kitchen",       x:0,y:24,w:10,h:14,k:"wet"},
+      {n:"Bedroom 1",     x:10,y:27,w:10,h:11,k:"room"},
+      {n:"Rear setback",  x:0,y:38,w:20,h:2,k:"open",noDim:true,tiny:true}
+    ],
+    openings: [[10,17,14,17],[10,17,10,20.5],[14,17,14,21],[10,24,10,27]],
+    windows: [[0,6,12,6],[4.5,38,8.5,38],[12,38,18,38]],
+    above: [[10,13,20,13],[10,13,10,17]],
+    doors: [
+      {w:"h",x:14.5,y:6,len:3.5,al:1,in:1},
+      {w:"h",x:10.4,y:27,len:3,al:1,in:1},
+      {w:"h",x:15,y:27,len:2.5,al:1,in:-1},
+      {w:"h",x:1,y:38,len:2.5,al:1,in:-1}
+    ],
+    extra: [{t:"MAIN DOOR",x:16.25,y:4.5}]
+  },
+  first: {
+    stairLabel: "UP",
+    rooms: [
+      {n:"Open to living", x:0,y:6,w:20,h:7,k:"void",sub:"double height"},
+      {n:"",              x:0,y:13,w:10,h:4,k:"void"},
+      {n:"Gallery",       x:10,y:13,w:10,h:8,k:"room"},
+      {n:"Stair",         x:0,y:17,w:10,h:7,k:"stair"},
+      {n:"Passage",       x:10,y:21,w:4,h:6,k:"room",vert:true},
+      {n:"Bath 2",        x:14,y:21,w:6,h:6,k:"wet"},
+      {n:"Study / flex",  x:0,y:24,w:10,h:14,k:"room"},
+      {n:"Bedroom 2",     x:10,y:27,w:10,h:11,k:"room"},
+      {n:"",              x:0,y:38,w:20,h:2,k:"open"}
+    ],
+    walls: [[0,6,0,17],[20,6,20,13],[0,6,20,6]],
+    openings: [[10,20.5,10,24],[10,21,14,21],[10,13,20,13],[10,13,10,17]],
+    windows: [[0,6,12,6],[2,38,8,38],[12,38,18,38]],
+    doors: [
+      {w:"h",x:10.4,y:27,len:3,al:1,in:1},
+      {w:"h",x:15,y:27,len:2.5,al:1,in:-1},
+      {w:"v",x:10,y:24.3,len:2.5,al:1,in:-1}
+    ],
+    extra: [{t:"GLASS RAIL",x:15,y:13.6},{t:"WOOD-CLAD PANEL",x:16,y:6.8}]
+  },
+  terrace: {
+    stairLabel: "",
+    rooms: [
+      {n:"Roof terrace",   x:0,y:3,w:20,h:14,k:"open",sub:"over double-height living"},
+      {n:"Stair room",     x:0,y:17,w:10,h:7,k:"stair"},
+      {n:"Pergola deck",   x:10,y:17,w:10,h:10,k:"open"},
+      {n:"Solar panels",   x:0,y:24,w:10,h:14,k:"open",sub:"on study roof"},
+      {n:"Rear terrace",   x:10,y:27,w:10,h:11,k:"open"},
+      {n:"",               x:0,y:38,w:20,h:2,k:"void"}
+    ],
+    openings: [], windows: [],
+    doors: [{w:"v",x:10,y:20.7,len:3,al:1,in:1}],
+    extra: [{t:"WATER TANK ABOVE",x:5,y:25.2},{t:"CONCRETE FRAME",x:10,y:3.6}]
+  }
+};
+
+const S=13, ML=40, MT=36, W=20*S, H=40*S;
+const X=x=>+(ML+x*S).toFixed(1), Y=y=>+(MT+(40-y)*S).toFixed(1);
+const ft=v=>Number.isInteger(v)?v+"′":Math.floor(v)+"′"+Math.round((v%1)*12)+"″";
+
+function draw(id,p){
+  const svg=document.getElementById("p-"+id);
+  svg.setAttribute("viewBox",`0 0 ${ML+W+16} ${MT+H+44}`);
+  svg.setAttribute("role","img");
+  svg.setAttribute("aria-label",id+" floor plan, north up, road to the south");
+  let s=`<defs>
+    <pattern id="h-${id}" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="7" height="7" fill="var(--open)"/><line x1="0" y1="0" x2="0" y2="7" stroke="var(--line)" stroke-width="1.4"/></pattern>
+    <marker id="a-${id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="var(--accent)"/></marker></defs>`;
+  // north arrow + overall dims
+  s+=`<g font-family="var(--f-mono)" font-size="10" fill="var(--muted)">
+    <line x1="${X(0)}" y1="${MT-14}" x2="${X(20)}" y2="${MT-14}" stroke="var(--muted)" stroke-width=".8"/>
+    <line x1="${X(0)}" y1="${MT-18}" x2="${X(0)}" y2="${MT-10}" stroke="var(--muted)" stroke-width=".8"/>
+    <line x1="${X(20)}" y1="${MT-18}" x2="${X(20)}" y2="${MT-10}" stroke="var(--muted)" stroke-width=".8"/>
+    <rect x="${X(10)-22}" y="${MT-21}" width="44" height="13" fill="var(--paper)"/>
+    <text x="${X(10)}" y="${MT-11}" text-anchor="middle">20′-0″</text>
+    <line x1="${ML-16}" y1="${Y(40)}" x2="${ML-16}" y2="${Y(0)}" stroke="var(--muted)" stroke-width=".8"/>
+    <line x1="${ML-20}" y1="${Y(40)}" x2="${ML-12}" y2="${Y(40)}" stroke="var(--muted)" stroke-width=".8"/>
+    <line x1="${ML-20}" y1="${Y(0)}" x2="${ML-12}" y2="${Y(0)}" stroke="var(--muted)" stroke-width=".8"/>
+    <rect x="${ML-23}" y="${Y(20)-24}" width="14" height="48" fill="var(--paper)"/>
+    <text x="${ML-12}" y="${Y(20)}" text-anchor="middle" transform="rotate(-90 ${ML-12} ${Y(20)})">40′-0″</text>
+  </g>
+  <g transform="translate(16 16)"><path d="M0 -11L5 5L0 1L-5 5z" fill="var(--ink)"/><text x="0" y="16" text-anchor="middle" font-family="var(--f-display)" font-weight="700" font-size="10" fill="var(--ink)">N</text></g>`;
+  // road
+  s+=`<rect x="${X(0)-8}" y="${Y(0)+8}" width="${W+16}" height="22" fill="var(--road)"/>
+    <text x="${X(10)}" y="${Y(0)+23}" text-anchor="middle" font-family="var(--f-mono)" font-size="10" letter-spacing="2" fill="var(--muted)">ROAD · SOUTH</text>`;
+  // plot line
+  s+=`<rect x="${X(0)}" y="${Y(40)}" width="${W}" height="${H}" fill="none" stroke="var(--muted)" stroke-width="1" stroke-dasharray="6 3"/>`;
+  const order=[...p.rooms].sort((a,b)=>(a.k==="open"||a.k==="void"?0:1)-(b.k==="open"||b.k==="void"?0:1));
+  for(const r of order){
+    const rx=X(r.x), ry=Y(r.y+r.h), rw=r.w*S, rh=r.h*S;
+    if(r.k==="void"){ s+=`<rect x="${rx}" y="${ry}" width="${rw}" height="${rh}" fill="var(--paper)" stroke="var(--line)" stroke-width=".8" stroke-dasharray="2 3"/>`; }
+    else if(r.k==="open"){ s+=`<rect x="${rx}" y="${ry}" width="${rw}" height="${rh}" fill="url(#h-${id})" stroke="var(--muted)" stroke-width=".9" stroke-dasharray="3 3"/>`; }
+    else { s+=`<rect x="${rx}" y="${ry}" width="${rw}" height="${rh}" fill="${r.k==="wet"?"var(--wet)":"var(--room)"}" stroke="var(--ink)" stroke-width="2.4"/>`; }
+    if(r.k==="stair"){
+      const fx0=r.x+3.5, fx1=r.x+r.w, tread=(fx1-fx0)/7;
+      s+=`<line x1="${X(fx0)}" y1="${Y(r.y+3.5)}" x2="${X(fx1)}" y2="${Y(r.y+3.5)}" stroke="var(--ink)" stroke-width="1.4"/>`;
+      s+=`<line x1="${X(fx0)}" y1="${Y(r.y)}" x2="${X(fx0)}" y2="${Y(r.y+r.h)}" stroke="var(--muted)" stroke-width=".8"/>`;
+      for(let k=1;k<7;k++){const tx=X(fx1-k*tread); s+=`<line x1="${tx}" y1="${Y(r.y)}" x2="${tx}" y2="${Y(r.y+r.h)}" stroke="var(--muted)" stroke-width=".7"/>`;}
+      s+=`<polyline points="${X(fx1-.4)},${Y(r.y+1.75)} ${X(r.x+1.75)},${Y(r.y+1.75)} ${X(r.x+1.75)},${Y(r.y+5.25)} ${X(fx1-.6)},${Y(r.y+5.25)}" fill="none" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#a-${id})"/>`;
+      s+=`<circle cx="${X(fx1-.4)}" cy="${Y(r.y+1.75)}" r="2.4" fill="var(--accent)"/>`;
+      if(p.stairLabel) s+=`<text x="${X(fx1-1.3)}" y="${Y(r.y+0.55)}" text-anchor="middle" font-family="var(--f-mono)" font-size="8.5" fill="var(--accent)">${p.stairLabel}</text>`;
+      s+=`<rect x="${X(r.x+.35)}" y="${Y(r.y+4.55)}" width="${2.8*S}" height="${1.6*S}" fill="var(--room)" opacity=".85"/><text x="${X(r.x+1.75)}" y="${Y(r.y+3.4)}" text-anchor="middle" font-family="var(--f-display)" font-weight="600" font-size="9.5" fill="var(--ink)">${r.n==="Stair room"?"STAIR RM":"STAIR"}</text>`;
+      continue;
+    }
+    if(!r.n) continue;
+    const cx=X(r.x+r.w/2), cy=Y(r.y+r.h/2+(r.ly||0));
+    const small=Math.min(r.w,r.h)<5;
+    const nfs=small?9.5:12, dfs=small?8.5:9.5;
+    const sub=r.sub!==undefined?r.sub:(r.noDim?"":`${ft(r.w)} × ${ft(r.h)}`);
+    const tf=r.vert?` transform="rotate(-90 ${cx} ${cy})"`:"";
+    s+=`<g${tf} text-anchor="middle">
+      <text x="${cx}" y="${sub?cy-2:cy+4}" font-family="var(--f-display)" font-weight="600" font-size="${r.tiny?9:nfs}" fill="var(--ink)">${r.n}</text>
+      ${sub?`<text x="${cx}" y="${cy+dfs+1}" font-family="var(--f-mono)" font-size="${dfs}" fill="var(--muted)">${sub}</text>`:""}</g>`;
+  }
+  for(const [a,b,c,d] of p.openings){
+    s+=`<line x1="${X(a)}" y1="${Y(b)}" x2="${X(c)}" y2="${Y(d)}" stroke="var(--room)" stroke-width="4"/>
+        <line x1="${X(a)}" y1="${Y(b)}" x2="${X(c)}" y2="${Y(d)}" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 2"/>`;
+  }
+  for(const [a,b,c,d] of (p.walls||[])){
+    s+=`<line x1="${X(a)}" y1="${Y(b)}" x2="${X(c)}" y2="${Y(d)}" stroke="var(--ink)" stroke-width="2.4"/>`;
+  }
+  for(const [a,b,c,d] of (p.above||[])){
+    s+=`<line x1="${X(a)}" y1="${Y(b)}" x2="${X(c)}" y2="${Y(d)}" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="5 3"/>`;
+  }
+  for(const [a,b,c] of p.windows){
+    s+=`<rect x="${X(a)}" y="${Y(b)-2.5}" width="${(c-a)*S}" height="5" fill="var(--glass)" stroke="var(--ink)" stroke-width=".8"/>`;
+  }
+  for(const d of p.doors){
+    const H_=[d.x,d.y];
+    const G_=d.w==="h"?[d.x+d.al*d.len,d.y]:[d.x,d.y+d.al*d.len];
+    const T_=d.w==="h"?[d.x,d.y+d.in*d.len]:[d.x+d.in*d.len,d.y];
+    const h=[X(H_[0]),Y(H_[1])], g=[X(G_[0]),Y(G_[1])], t=[X(T_[0]),Y(T_[1])];
+    const cross=(t[0]-h[0])*(g[1]-h[1])-(t[1]-h[1])*(g[0]-h[0]);
+    s+=`<line x1="${h[0]}" y1="${h[1]}" x2="${g[0]}" y2="${g[1]}" stroke="var(--room)" stroke-width="4.5"/>
+        <line x1="${h[0]}" y1="${h[1]}" x2="${t[0]}" y2="${t[1]}" stroke="var(--ink)" stroke-width="1.6"/>
+        <path d="M${t[0]} ${t[1]}A${d.len*S} ${d.len*S} 0 0 ${cross>0?1:0} ${g[0]} ${g[1]}" fill="none" stroke="var(--muted)" stroke-width=".8"/>`;
+  }
+  for(const e of (p.extra||[])){
+    s+=`<text x="${X(e.x)}" y="${Y(e.y)}" text-anchor="middle" font-family="var(--f-mono)" font-size="8" letter-spacing=".5" fill="var(--accent)">${e.t}</text>`;
+  }
+  svg.innerHTML=s;
+}
+for(const k in PLANS) draw(k,PLANS[k]);
+
+// room schedule
+const SCHED=[
+  ["Ground floor",[["Living + Dining",20,11],["Kitchen",10,14],["Bedroom 1",10,11],["Bath 1 (attached)",6,6],["Wash",6,4],["Passage",4,10],["Stair",10,7],["Porch",8,3,"open"]]],
+  ["First floor",[["Gallery lounge",10,8],["Bedroom 2",10,11],["Bath 2 (attached)",6,6],["Study / flex",10,14],["Passage",4,6],["Stair",10,7],["Void over living",20,7,"open"]]],
+  ["Terrace",[["Stair room",10,7],["Pergola deck",10,10,"open"]]]
+];
+let rows="", enclosed=0;
+for(const [fl,list] of SCHED){
+  rows+=`<tr class="floor"><td colspan="3">${fl}</td></tr>`;
+  for(const [n,w,h,o] of list){
+    const a=w*h; if(!o) enclosed+=a;
+    rows+=`<tr><td>${n}${o?'<span class="tag">open</span>':""}</td><td class="n">${ft(w)} × ${ft(h)}</td><td class="n">${a}</td></tr>`;
+  }
+}
+rows+=`<tr class="total"><td>Enclosed area, measured on grid lines</td><td></td><td class="n">${enclosed.toLocaleString()}</td></tr>`;
+document.querySelector("#sched tbody").innerHTML=rows;
+</script>
+
+</html>
